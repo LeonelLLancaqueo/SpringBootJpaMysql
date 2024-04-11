@@ -1,6 +1,7 @@
 package com.example.empresa.service;
 
 import com.example.empresa.models.Persona;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,5 +17,8 @@ public interface IPersonaService {
     public void deletePersonaById(Integer id);
 
     public void deletePersonas();
+
+    public List<Persona> getPersonasMayoresDeEdad();
+
 }
 

@@ -2,12 +2,10 @@ package com.example.empresa.service;
 
 
 import com.example.empresa.models.Persona;
-import com.example.empresa.repository.PersonaRepository;
+import com.example.empresa.repository.IPersonaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -16,11 +14,14 @@ import java.util.Optional;
 public class PersonaService implements IPersonaService{
 
     @Autowired
-    private PersonaRepository personaRepository;
+    private IPersonaRepository personaRepository;
+
 
     public void savePersona(Persona persona){
 
         personaRepository.save(persona);
+
+
     }
     public List<Persona> getPersonas(){
         return personaRepository.findAll();
@@ -40,6 +41,11 @@ public class PersonaService implements IPersonaService{
 
     public void deletePersonas() {
         personaRepository.deleteAll();
+    }
+
+    @Override
+    public List<Persona> getPersonasMayoresDeEdad() {
+        return personaRepository.getPersonasMayoresDeEdad();
     }
 
 

@@ -45,6 +45,12 @@ public class PersonaController {
     }
 
 
+    //querys personalizadas
+    @GetMapping("/mayores-de-edad")
+    public List<Persona> getPersonasMayoresDeEdad(){
+        return  personaService.getPersonasMayoresDeEdad();
+    }
+
 
 
 
