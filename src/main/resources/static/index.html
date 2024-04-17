@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personas</title>
+</head>
+<body>
+
+<table class="persona-table" >
+
+    <h1>Crear Cuenta</h1>
+    <p>Ingresa nombre de usuario</p>
+    <input id="usuarioInput" type="text" />
+    <p>Ingresa tu contraseña</p>
+    <input  id="contraseñaInput" type="text" />
+    <button onclick="registrarUsuario()">Registrar</button>
+
+    <h1>Iniciar Sesion</h1>
+    <p>Ingresa nombre de usuario</p>
+    <input id="usuarioInput" type="text" />
+    <p>Ingresa tu contraseña</p>
+    <input  id="contraseñaInput" type="text" />
+    <button onclick="enviarCredenciales()">IniciarSesion</button>
+
+
+
+
+    <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>e-mail</th>
+        <th>Fecha Nacimiento</th>
+    </tr>
+    
+
+    <script src="fetchPersonas.js"></script>
+    <script src="registroUsuario.js"></script>
+    <script src="verificarUsuario.js"></script>
+
+</table>
+
+
+
+</body>
+</html>
