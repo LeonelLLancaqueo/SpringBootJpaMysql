@@ -1,5 +1,7 @@
 package com.example.empresa.repository;
 
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -18,5 +20,9 @@ public interface IUsuarioRepository extends JpaRepository<Usuario, Integer>{
         @Param("usuario") String usuario,
         @Param("contraseña") String contraseña
     );
+
+    @Query(value="select u.idPersona, u.usuario, u.contraseña, p.nombre, p.apellido, p.dni, p.fecha_nacimiento from usuario u, persona p where u.idPersona = p.id", nativeQuery = true)
+    public List<Map<String,Object>> getUsuarioMathPerson();
+    
     
 }

@@ -1,5 +1,7 @@
 package com.example.empresa.controllers;
 
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,5 +44,11 @@ public class UsuarioController {
              
     }
 
+    @GetMapping("/mathPerson")
+    public List<Map<String, Object>> getUsuarioMatchPersona(){
+        return usuarioService.getUsuarioMatchPersonas(); 
+    }
+             
+    
 
 }

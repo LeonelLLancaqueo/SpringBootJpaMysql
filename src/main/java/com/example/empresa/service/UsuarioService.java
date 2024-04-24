@@ -1,5 +1,7 @@
 package com.example.empresa.service;
 
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,11 @@ public class UsuarioService implements IUsuarioService {
     
     public Optional<Usuario> verificarUsuario(String usuario, String contraseña) {
         return usuarioRepository.verificarUsuario(usuario, contraseña);
+    }
+
+    @Override
+    public List<Map<String, Object>> getUsuarioMatchPersonas() {
+        return usuarioRepository.getUsuarioMathPerson();
     }
 
     
