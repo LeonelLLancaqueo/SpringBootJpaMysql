@@ -2,8 +2,7 @@ package com.example.empresa.models;
 
 import jakarta.persistence.*;
 
-
-import java.sql.Date;
+import java.util.Date;
 import java.util.Objects;
 
 
@@ -23,11 +22,11 @@ public class Persona {
     public Persona(){
 
     }
-    public Persona(String nombre, String apellido, int dni, Date fechaNacimiento) {
+    public Persona(String nombre, String apellido, int dni, java.util.Date date) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
-        this.fechaNacimiento = fechaNacimiento;
+        this.fechaNacimiento = date;
     }
 
     public int getId() {

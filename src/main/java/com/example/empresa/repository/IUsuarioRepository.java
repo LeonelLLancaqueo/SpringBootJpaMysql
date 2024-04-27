@@ -23,6 +23,7 @@ public interface IUsuarioRepository extends JpaRepository<Usuario, Integer>{
 
     @Query(value="select u.idPersona, u.usuario, u.contraseña, p.nombre, p.apellido, p.dni, p.fecha_nacimiento from usuario u, persona p where u.idPersona = p.id", nativeQuery = true)
     public List<Map<String,Object>> getUsuarioMathPerson();
+
     
     
 }
