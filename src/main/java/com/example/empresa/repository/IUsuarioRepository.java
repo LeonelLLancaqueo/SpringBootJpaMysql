@@ -20,7 +20,8 @@ public interface IUsuarioRepository extends JpaRepository<Usuario, Integer>{
         @Param("usuario") String usuario,
         @Param("contraseña") String contraseña
     );
-
+    //obtenemos las personas q tengan un usuario registrado
+    //realizamos un join entre las tablas persona y usuarios en la db
     @Query(value="select u.idPersona, u.usuario, u.contraseña, p.nombre, p.apellido, p.dni, p.fecha_nacimiento from usuario u, persona p where u.idPersona = p.id", nativeQuery = true)
     public List<Map<String,Object>> getUsuarioMathPerson();
 

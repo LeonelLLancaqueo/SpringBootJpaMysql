@@ -6,9 +6,9 @@ import com.example.empresa.service.PersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
+
 import java.util.List;
-import java.util.Map;
+
 import java.util.Optional;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -31,7 +31,7 @@ public class PersonaController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Persona> getPersonaById(@PathVariable Integer id){
+    public Optional<Persona> getPersonaById(@PathVariable("id") int id){
         return  personaService.getPersonaById(id);
     }
 
@@ -57,13 +57,5 @@ public class PersonaController {
         return  personaService.getPersonasMayoresDeEdad();
     }
 
-    @GetMapping("/test")
-    public Map<String,String> getMethodName() {
-        Map<String, String> request = new HashMap<String,String>();
-        request.put("nombre", "leonel");
-        return request;
-            
-               
-    }
 
 }
