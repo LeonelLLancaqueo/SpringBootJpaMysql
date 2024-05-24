@@ -5,6 +5,7 @@ package com.example.empresa;
 
 
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -68,8 +69,15 @@ public class PersonaServiceTest {
 
     private List<Persona> preloadPerson(){
         //cargamos personas el repositorio
-        Persona personaTest= new Persona("leonel","llancaqueo", 43684498, new Date());
-        Persona personaTest2= new Persona("juan","llancaqueo", 52417896, new Date());
+        Persona personaTest= Persona.builder()
+                .nombre("leonel")
+                .apellido("43684498")
+                .dni(43684498)
+                .fechaNacimiento(LocalDate.now())
+                .build(); 
+        
+        
+        Persona personaTest2= new Persona("juan","llancaqueo", 52417896, LocalDate.now());
         
         List <Persona>listaPersonas= new ArrayList<Persona>();
         listaPersonas.add(personaTest);
