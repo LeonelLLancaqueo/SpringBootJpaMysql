@@ -2,7 +2,8 @@ package com.example.empresa.request;
 
 import com.example.empresa.models.Role;
 
-
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,5 +18,6 @@ public class UsuarioRequest {
     private String usuario;
     @NotEmpty(message = "la contraseña no debe estar vacio")
     private String contraseña;
+    @Enumerated(EnumType.STRING)
     Role role;
 }

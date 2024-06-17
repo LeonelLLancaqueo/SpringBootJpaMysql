@@ -4,7 +4,8 @@ import java.util.List;
 
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.empresa.models.Role;
@@ -12,16 +13,18 @@ import com.example.empresa.models.Usuario;
 import com.example.empresa.repository.IUsuarioRepository;
 import com.example.empresa.request.UsuarioRequest;
 
+import lombok.AllArgsConstructor;
+
 @Service
+@AllArgsConstructor
 public class UsuarioService implements IUsuarioService {
 
+    private final PasswordEncoder passwordEncoder;
 
-    @Autowired
+    
     private IUsuarioRepository usuarioRepository;
 
-    public UsuarioService(IUsuarioRepository usuarioRepository){
-        this.usuarioRepository= usuarioRepository;
-    }
+    
 
     @Override
     public Optional<Usuario> saveUsuario(UsuarioRequest requestUsuario) { 
@@ -38,7 +41,7 @@ public class UsuarioService implements IUsuarioService {
         }
 
         Usuario usuario= Usuario.builder()
-            .contraseña(requestUsuario.getContraseña())
+            .contraseña(passwordEncoder.encode(requestUsuario.getContraseña()))
             .usuario(requestUsuario.getUsuario())
             .role(role)
             .build();

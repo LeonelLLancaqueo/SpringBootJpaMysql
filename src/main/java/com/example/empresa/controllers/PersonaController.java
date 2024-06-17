@@ -1,7 +1,7 @@
 package com.example.empresa.controllers;
 
 import com.example.empresa.models.Persona;
-import com.example.empresa.models.Usuario;
+
 import com.example.empresa.request.PersonaRequest;
 import com.example.empresa.service.PersonaService;
 

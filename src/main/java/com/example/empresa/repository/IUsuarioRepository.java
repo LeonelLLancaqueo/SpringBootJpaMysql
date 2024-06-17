@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+
 import org.springframework.stereotype.Repository;
 
 import com.example.empresa.models.Usuario;
@@ -23,7 +24,7 @@ public interface IUsuarioRepository extends JpaRepository<Usuario, Integer>{
     @Query(value = "select * from usuario u where u.usuario= :usuario", nativeQuery = true)
     public Optional<Usuario> verificarNombreUsuario(
         @Param("usuario") String usuario
-        );
+    );
 
     
     
